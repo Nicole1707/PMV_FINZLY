@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finzly – Finanzas del futuro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background: radial-gradient(circle at top, #0f172a, #020617);
+        color: #f8fafc;
+      }
+
+      .fade-in {
+        animation: fadeIn 1s ease-in-out both;
+      }
+
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      .neon-text {
+  color: #00C6FF;
+  text-shadow: 0 0 4px #00C6FF, 0 0 8px #00C6FF;
+}
+
+
+      .glass {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .grid-bg::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body class="relative overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="w-full fixed top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10 fade-in">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold neon-text">Finzly</h1>
+        <nav class="space-x-6 text-sm hidden md:block">
+          <a href="#features" class="text-white hover:text-cyan-400 transition">Características</a>
+          <a href="#market" class="text-white hover:text-cyan-400 transition">Mercado</a>
+          <a href="#team" class="text-white hover:text-cyan-400 transition">Nosotros</a>
+          <a href="#contact" class="text-white hover:text-cyan-400 transition">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+ <!-- Hero -->
+<section class="pt-32 pb-24 text-center fade-in relative grid-bg">
+    <div class="relative z-10 max-w-3xl mx-auto px-4">
+<!-- Ícono superior -->
+       <h2 class="text-5xl font-extrabold neon-text mb-4">Tu dinero, bajo control</h2>
+      <p class="text-lg mb-6 text-gray-300">La app futurista que transforma tus finanzas personales con IA y automatización.</p>
+      <a href="#contact" class="bg-cyan-400 text-black font-semibold px-8 py-3 rounded-full hover:bg-cyan-300 transition mb-10 inline-block">Recibir actualizaciones</a>
+      
+         <!-- Imágenes mockup lado a lado -->
+          <div class="mt-10 flex flex-col md:flex-row justify-center items-center gap-6">
+    <!-- Primera imagen: Pantalla de inicio -->
+    <img 
+      src="/mock.png" 
+      alt="Inicio Finzly App" 
+      class="w-full max-w-xs md:max-w-sm h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition duration-300"
+      />
+  
+    <!-- Segunda imagen: Pantalla de usuario -->
+    <img 
+    src="/inicio.png" 
+      alt="Home Finzly App Usuario" 
+      class="w-full max-w-xs md:max-w-sm h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition duration-300"
+      />
+  </div>
+  </section>
+  
+
+    <!-- Features -->
+    <section id="features" class="py-24 relative fade-in">
+      <div class="relative z-10 max-w-6xl mx-auto px-4">
+        <h3 class="text-3xl font-bold text-center neon-text mb-14">¿Qué ofrece Finzly?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="glass p-6 rounded-xl shadow hover:shadow-lg transition-transform hover:-translate-y-1">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Presupuesto" class="w-14 mb-4 mx-auto" />
+            <h4 class="text-xl font-semibold mb-2 text-center text-cyan-300">Presupuesto automático</h4>
+            <p class="text-center text-gray-300 text-sm">Organiza tus ingresos con tecnología predictiva y clasificaciones automáticas.</p>
+          </div>
+          <div class="glass p-6 rounded-xl shadow hover:shadow-lg transition-transform hover:-translate-y-1">
+            <img src="https://cdn-icons-png.flaticon.com/512/1827/1827359.png" alt="Alertas" class="w-14 mb-4 mx-auto" />
+            <h4 class="text-xl font-semibold mb-2 text-center text-cyan-300">Alertas inteligentes</h4>
+            <p class="text-center text-gray-300 text-sm">IA que te avisa si estás gastando de más o si puedes ahorrar mejor.</p>
+          </div>
+          <div class="glass p-6 rounded-xl shadow hover:shadow-lg transition-transform hover:-translate-y-1">
+            <img src="https://cdn-icons-png.flaticon.com/512/8619/8619878.png" alt="IA" class="w-14 mb-4 mx-auto" />
+            <h4 class="text-xl font-semibold mb-2 text-center text-cyan-300">IA financiera</h4>
+            <p class="text-center text-gray-300 text-sm">Aprende de tus hábitos y sugiere acciones para mejorar tu economía.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Market -->
+    <section id="market" class="py-24 bg-black/80 fade-in">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <h3 class="text-3xl font-bold neon-text mb-8">¿A quién queremos llegar?</h3>
+        <p class="text-gray-300 text-lg mb-10">Más de 2 millones de personas en República Dominicana. Apuntamos a alcanzar un 2% (40,000 usuarios) en el primer año.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div class="glass p-4 rounded-lg">
+            <h4 class="font-semibold text-lg mb-1 text-cyan-200">🎯 Jóvenes de 18 a 45 años</h4>
+            <p class="text-gray-400 text-sm">Personas económicamente activas que quieren controlar su dinero.</p>
+          </div>
+          <div class="glass p-4 rounded-lg">
+            <h4 class="font-semibold text-lg mb-1 text-cyan-200">📱 Usuarios móviles</h4>
+            <p class="text-gray-400 text-sm">Freelancers, estudiantes y profesionales con ingresos variables.</p>
+          </div>
+          <div class="glass p-4 rounded-lg">
+            <h4 class="font-semibold text-lg mb-1 text-cyan-200">💸 Con deudas</h4>
+            <p class="text-gray-400 text-sm">Buscan una app que los ayude a ahorrar y pagar sus compromisos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="py-24 fade-in">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h3 class="text-3xl font-bold mb-4 neon-text">¿Quiénes somos?</h3>
+        <img src="https://cdn-icons-png.flaticon.com/512/5698/5698850.png" alt="Equipo" class="w-16 mx-auto mb-4" />
+        <p class="text-lg text-gray-300">Estudiantes de Ingeniería en TICs que quieren transformar la forma en que las personas administran su dinero usando inteligencia artificial y automatización financiera.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-gradient-to-br from-cyan-600 to-blue-900 text-white text-center fade-in">
+      <div class="max-w-xl mx-auto px-4">
+        <h3 class="text-3xl font-bold mb-4">¿Te interesa Finzly?</h3>
+        <p class="mb-6 text-gray-200">Déjanos tu correo y sé parte del lanzamiento exclusivo de nuestra app.</p>
+        <form class="flex flex-col sm:flex-row gap-4 justify-center">
+          <input type="email" placeholder="Tu correo" class="px-4 py-2 rounded-md text-gray-800 w-full sm:w-auto" required />
+          <button class="bg-white text-cyan-600 px-6 py-2 rounded-md font-semibold hover:bg-gray-100 transition">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-6 text-center text-sm fade-in border-t border-white/10">
+      &copy; 2025 Finzly. Hecho con ❤️ por estudiantes de Ingeniería en TICs.
+    </footer>
+  </body>
+</html>
