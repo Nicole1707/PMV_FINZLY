@@ -66,20 +66,20 @@
 <!-- Ícono superior -->
        <h2 class="text-5xl font-extrabold neon-text mb-4">Tu dinero, bajo control</h2>
       <p class="text-lg mb-6 text-gray-300">La app futurista que transforma tus finanzas personales con IA y automatización.</p>
-      <a href="#contact" class="bg-cyan-400 text-black font-semibold px-8 py-3 rounded-full hover:bg-cyan-300 transition mb-10 inline-block">Recibir actualizaciones</a>
+      <!-- <a href="#contact" class="bg-cyan-400 text-black font-semibold px-8 py-3 rounded-full hover:bg-cyan-300 transition mb-10 inline-block">Recibir actualizaciones</a> -->
       
          <!-- Imágenes mockup lado a lado -->
           <div class="mt-10 flex flex-col md:flex-row justify-center items-center gap-6">
     <!-- Primera imagen: Pantalla de inicio -->
     <img 
-      src="/mock.png" 
+      src="./assets/mock.png" 
       alt="Inicio Finzly App" 
       class="w-full max-w-xs md:max-w-sm h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition duration-300"
       />
   
     <!-- Segunda imagen: Pantalla de usuario -->
     <img 
-    src="/inicio.png" 
+    src="./assets/inicio.png" 
       alt="Home Finzly App Usuario" 
       class="w-full max-w-xs md:max-w-sm h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition duration-300"
       />
@@ -112,26 +112,37 @@
     </section>
 
     <!-- Market -->
-    <section id="market" class="py-24 bg-black/80 fade-in">
-      <div class="max-w-5xl mx-auto px-4 text-center">
-        <h3 class="text-3xl font-bold neon-text mb-8">¿A quién queremos llegar?</h3>
-        <p class="text-gray-300 text-lg mb-10">Más de 2 millones de personas en República Dominicana. Apuntamos a alcanzar un 2% (40,000 usuarios) en el primer año.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-          <div class="glass p-4 rounded-lg">
-            <h4 class="font-semibold text-lg mb-1 text-cyan-200">🎯 Jóvenes de 18 a 45 años</h4>
-            <p class="text-gray-400 text-sm">Personas económicamente activas que quieren controlar su dinero.</p>
-          </div>
-          <div class="glass p-4 rounded-lg">
-            <h4 class="font-semibold text-lg mb-1 text-cyan-200">📱 Usuarios móviles</h4>
-            <p class="text-gray-400 text-sm">Freelancers, estudiantes y profesionales con ingresos variables.</p>
-          </div>
-          <div class="glass p-4 rounded-lg">
-            <h4 class="font-semibold text-lg mb-1 text-cyan-200">💸 Con deudas</h4>
-            <p class="text-gray-400 text-sm">Buscan una app que los ayude a ahorrar y pagar sus compromisos.</p>
-          </div>
-        </div>
+<section id="market" class="py-24 bg-black/80 fade-in">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold neon-text mb-4">¿A quién queremos llegar?</h3>
+    <img src="https://cdn-icons-png.flaticon.com/512/854/854866.png" alt="Mercado geográfico" class="w-20 mx-auto mb-6" />
+    
+    <!-- Número animado -->
+    <p class="text-5xl font-extrabold neon-text mb-6">
+      <span id="counter">0</span> usuarios
+    </p>
+
+    <p class="text-gray-300 text-lg mb-10">
+      El mercado meta son más de 2 millones de personas en República Dominicana con acceso a smartphones. En nuestro primer año, queremos alcanzar al menos un 2% del mercado.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+      <div class="glass p-4 rounded-lg">
+        <h4 class="font-semibold text-lg mb-1 text-cyan-200">🎯 Jóvenes de 18 a 45 años</h4>
+        <p class="text-gray-400 text-sm">Personas económicamente activas que quieren controlar su dinero.</p>
       </div>
-    </section>
+      <div class="glass p-4 rounded-lg">
+        <h4 class="font-semibold text-lg mb-1 text-cyan-200">📱 Usuarios móviles</h4>
+        <p class="text-gray-400 text-sm">Freelancers, estudiantes y profesionales con ingresos variables.</p>
+      </div>
+      <div class="glass p-4 rounded-lg">
+        <h4 class="font-semibold text-lg mb-1 text-cyan-200">💸 Con deudas</h4>
+        <p class="text-gray-400 text-sm">Buscan una app que los ayude a ahorrar y pagar sus compromisos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Team -->
     <section id="team" class="py-24 fade-in">
@@ -156,7 +167,30 @@
 
     <!-- Footer -->
     <footer class="bg-black text-gray-400 py-6 text-center text-sm fade-in border-t border-white/10">
-      &copy; 2025 Finzly. Hecho con ❤️ por estudiantes de Ingeniería en TICs.
+      &copy; 2025 Finzly. 
+      <!-- Hecho con ❤️ por estudiantes de Ingeniería en TICs. -->
     </footer>
+    <script>
+      function animateCount(id, end, duration) {
+        const el = document.getElementById(id);
+        let start = 0;
+        const step = Math.ceil(end / (duration / 16)); // 60fps aprox
+    
+        const counter = setInterval(() => {
+          start += step;
+          if (start >= end) {
+            el.innerText = end.toLocaleString("es-DO");
+            clearInterval(counter);
+          } else {
+            el.innerText = start.toLocaleString("es-DO");
+          }
+        }, 16);
+      }
+    
+      document.addEventListener("DOMContentLoaded", () => {
+        animateCount("counter", 40000, 2000); // de 0 a 40000 en 2s
+      });
+    </script>
+    
   </body>
 </html>
